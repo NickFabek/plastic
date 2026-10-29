@@ -1,0 +1,21 @@
+h4_ind d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/ind.bin
+h4_ind_w10 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/ind.bin anchor=runs/init_s/anc_ind.bin anchor_lambda=10
+h4_ind_w10_crit d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/ind.bin anchor=runs/init_s/anc_ind.bin anchor_lambda=10 anchor_sched=linear anchor_end=0.5
+h4_ind_ema d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/ind.bin anchor=runs/init_s/anc_ind.bin anchor_lambda=10 anchor_ema=0.002
+early_ind d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/ind.bin stop_step=150
+h2_c_jev_live d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev_live.bin
+h3_f03_live d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev_live.bin labels=labels/train.bin n_lab=8 concept_layer=0 concept_w=0.3
+h3_f03_t01 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin labels=labels/train.bin n_lab=8 concept_layer=0 concept_w=0.3 concept_tau=0.1
+h3_f03_rand_L3_t01 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 labels=labels/train.bin n_lab=8 concept_layer=3 fid_layer=3 concept_w=0.3 concept_tau=0.1
+seed_base_2 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 seed=2 data_seed=1236
+seed_stat_2 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 seed=2 data_seed=1236 init_from=runs/init_s2/stat.bin
+seed_stat_llm_2 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 seed=2 data_seed=1236 init_from=runs/init_s2/stat_llm.bin
+seed_c_jev_2 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 seed=2 data_seed=1236 init_from=runs/init_s2/c_jev.bin
+seed_c_kmeans_2 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 seed=2 data_seed=1236 init_from=runs/init_s2/c_kmeans.bin
+seed_base_3 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 seed=3 data_seed=1237
+seed_stat_3 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 seed=3 data_seed=1237 init_from=runs/init_s3/stat.bin
+seed_stat_llm_3 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 seed=3 data_seed=1237 init_from=runs/init_s3/stat_llm.bin
+seed_c_jev_3 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 seed=3 data_seed=1237 init_from=runs/init_s3/c_jev.bin
+seed_c_kmeans_3 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 seed=3 data_seed=1237 init_from=runs/init_s3/c_kmeans.bin
+h2_stat_rnd d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/stat_rnd.bin
+h2_c_jev_nn d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev_nn.bin

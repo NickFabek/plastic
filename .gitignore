@@ -1,0 +1,28 @@
+# secrets
+.env
+.env.*
+
+# data and everything derived from it (regenerate with tools/prep_climbmix.py, tools/stats.py)
+data/
+data_bin/
+stats/
+
+# training outputs, checkpoints, API response cache
+runs/
+cache/
+build/
+
+# large / regenerable label artifacts (keep the paid-for Jev + gpt-6-luna outputs)
+labels/*prop.npz
+labels/kmeans.npz
+labels/*.bin
+
+# exported browser weights (~110 MB; regenerate with tools/export_web.py)
+web/models/
+
+# local tooling
+.claude/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

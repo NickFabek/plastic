@@ -1,0 +1,902 @@
+{
+ "topic": [
+  {
+   "group": "computer_programming",
+   "group_desc": "Software creation, programming tasks, and developer practices",
+   "concepts": [
+    {
+     "id": "programming_basics",
+     "desc": "Language syntax, functions, variables, and introductory programming concepts"
+    },
+    {
+     "id": "algorithms_data_structures",
+     "desc": "Algorithm design, complexity, data structures, and computational problem solving"
+    },
+    {
+     "id": "frontend_web",
+     "desc": "Browser interfaces, HTML, CSS, JavaScript, and interactive web pages"
+    },
+    {
+     "id": "backend_services",
+     "desc": "Server-side applications, APIs, requests, and service logic"
+    },
+    {
+     "id": "data_text_processing",
+     "desc": "Parsing, transforming, validating, and analyzing structured or textual data"
+    },
+    {
+     "id": "databases_storage",
+     "desc": "Database queries, schemas, persistence, and application data storage"
+    },
+    {
+     "id": "testing_debugging",
+     "desc": "Finding defects, writing tests, and diagnosing software behavior"
+    },
+    {
+     "id": "mobile_app_development",
+     "desc": "Building mobile applications, navigation, and device-specific features"
+    },
+    {
+     "id": "developer_tools_build",
+     "desc": "Frameworks, packages, command-line tools, configuration, and build workflows"
+    },
+    {
+     "id": "software_architecture_security",
+     "desc": "Application structure, permissions, reliability, and software security"
+    }
+   ]
+  },
+  {
+   "group": "mathematics_reasoning",
+   "group_desc": "Mathematical concepts, quantitative methods, and formal problem solving",
+   "concepts": [
+    {
+     "id": "arithmetic_word_problems",
+     "desc": "Number operations and everyday quantitative problems"
+    },
+    {
+     "id": "algebra_equations",
+     "desc": "Variables, equations, inequalities, and symbolic manipulation"
+    },
+    {
+     "id": "geometry_measurement",
+     "desc": "Shapes, dimensions, area, volume, distance, and spatial measurement"
+    },
+    {
+     "id": "probability_combinatorics",
+     "desc": "Chance, counting methods, and arrangements of possible outcomes"
+    },
+    {
+     "id": "statistics_data_analysis",
+     "desc": "Statistical summaries, sampling, distributions, and interpreting numerical evidence"
+    },
+    {
+     "id": "logic_constraints",
+     "desc": "Deduction, truth conditions, scheduling, and constraint-based reasoning"
+    },
+    {
+     "id": "discrete_mathematics",
+     "desc": "Sets, graphs, sequences, number theory, and discrete structures"
+    },
+    {
+     "id": "calculus_advanced_math",
+     "desc": "Calculus and other advanced mathematical theories or methods"
+    },
+    {
+     "id": "financial_quantitative_math",
+     "desc": "Interest, rates, costs, and quantitative calculations involving money"
+    },
+    {
+     "id": "math_teaching_content",
+     "desc": "Explanations of mathematical concepts for learners"
+    }
+   ]
+  },
+  {
+   "group": "technology_engineering",
+   "group_desc": "Computing systems, devices, infrastructure, and applied engineering",
+   "concepts": [
+    {
+     "id": "artificial_intelligence",
+     "desc": "Machine learning, intelligent systems, and AI applications"
+    },
+    {
+     "id": "networks_cloud_computing",
+     "desc": "Computer networks, cloud infrastructure, hosting, and distributed services"
+    },
+    {
+     "id": "cybersecurity_privacy",
+     "desc": "Threats, data protection, authentication, and digital privacy"
+    },
+    {
+     "id": "computing_hardware",
+     "desc": "Computer components, processors, peripherals, and hardware systems"
+    },
+    {
+     "id": "consumer_electronics",
+     "desc": "Personal devices, appliances, and consumer technology features"
+    },
+    {
+     "id": "telecommunications_internet",
+     "desc": "Internet access, communications systems, and connectivity infrastructure"
+    },
+    {
+     "id": "engineering_design",
+     "desc": "Design, construction, and operation of engineered systems"
+    },
+    {
+     "id": "automotive_transport_technology",
+     "desc": "Vehicle technology, road safety, and transport systems"
+    },
+    {
+     "id": "energy_technology",
+     "desc": "Energy generation, storage, efficiency, and related technologies"
+    },
+    {
+     "id": "technical_standards_safety",
+     "desc": "Technical specifications, standards, and engineering safety practices"
+    }
+   ]
+  },
+  {
+   "group": "health_medicine",
+   "group_desc": "Human health, clinical care, medical science, and wellbeing",
+   "concepts": [
+    {
+     "id": "conditions_diagnosis",
+     "desc": "Symptoms, diseases, risk factors, and identifying medical conditions"
+    },
+    {
+     "id": "medicines_treatments",
+     "desc": "Medications, therapies, procedures, and treatment choices"
+    },
+    {
+     "id": "anatomy_physiology",
+     "desc": "Structures and functions of the human body"
+    },
+    {
+     "id": "mental_behavioral_health",
+     "desc": "Mental disorders, emotional wellbeing, and behavioral health care"
+    },
+    {
+     "id": "nutrition_food_health",
+     "desc": "Diet, nutrients, and food choices discussed for health effects"
+    },
+    {
+     "id": "exercise_rehabilitation",
+     "desc": "Physical activity, fitness, recovery, and rehabilitation"
+    },
+    {
+     "id": "dental_eye_health",
+     "desc": "Dental, oral, vision, and eye-care conditions or services"
+    },
+    {
+     "id": "clinical_research",
+     "desc": "Medical studies, clinical trials, and evidence about treatments"
+    },
+    {
+     "id": "healthcare_systems",
+     "desc": "Health professionals, medical services, access, and care administration"
+    },
+    {
+     "id": "public_health_epidemiology",
+     "desc": "Population health, disease spread, prevention, and health campaigns"
+    }
+   ]
+  },
+  {
+   "group": "natural_sciences",
+   "group_desc": "Living systems, physical processes, Earth, climate, and space",
+   "concepts": [
+    {
+     "id": "biology_genetics",
+     "desc": "Cells, organisms, heredity, evolution, and biological processes"
+    },
+    {
+     "id": "animals_zoology",
+     "desc": "Animal species, behavior, anatomy, and classification"
+    },
+    {
+     "id": "plants_botany",
+     "desc": "Plant species, growth, structure, and classification"
+    },
+    {
+     "id": "ecology_conservation",
+     "desc": "Ecosystems, habitats, biodiversity, and conservation"
+    },
+    {
+     "id": "earth_geology",
+     "desc": "Rocks, landforms, soil, Earth structure, and geological history"
+    },
+    {
+     "id": "climate_weather",
+     "desc": "Atmospheric conditions, climate patterns, and weather events"
+    },
+    {
+     "id": "astronomy_space",
+     "desc": "Celestial objects, space exploration, and planetary science"
+    },
+    {
+     "id": "chemistry_materials",
+     "desc": "Chemical substances, reactions, elements, and material properties"
+    },
+    {
+     "id": "physics_natural_laws",
+     "desc": "Forces, motion, energy, matter, and physical principles"
+    },
+    {
+     "id": "scientific_methods_research",
+     "desc": "Scientific methods, experiments, findings, and research interpretation"
+    }
+   ]
+  },
+  {
+   "group": "education_learning",
+   "group_desc": "Schools, teaching, student learning, and educational institutions",
+   "concepts": [
+    {
+     "id": "school_curriculum",
+     "desc": "School subjects, course content, and curriculum planning"
+    },
+    {
+     "id": "teaching_classroom",
+     "desc": "Instructional methods, classroom practice, and teacher development"
+    },
+    {
+     "id": "student_learning_support",
+     "desc": "Learning strategies, student progress, and academic support"
+    },
+    {
+     "id": "special_education_access",
+     "desc": "Disability accommodations, special education, and inclusive access"
+    },
+    {
+     "id": "higher_education_admissions",
+     "desc": "Universities, college applications, degrees, and admissions requirements"
+    },
+    {
+     "id": "vocational_training",
+     "desc": "Trade skills, apprenticeships, and occupational training programs"
+    },
+    {
+     "id": "language_instruction",
+     "desc": "Teaching or learning languages and language skills"
+    },
+    {
+     "id": "study_exam_preparation",
+     "desc": "Study advice, exam preparation, and learner guidance"
+    },
+    {
+     "id": "education_policy_systems",
+     "desc": "Education administration, institutions, policies, and school systems"
+    },
+    {
+     "id": "educational_research",
+     "desc": "Research and evaluation concerning teaching or learning"
+    }
+   ]
+  },
+  {
+   "group": "business_economics",
+   "group_desc": "Organizations, commerce, employment, finance, and economic activity",
+   "concepts": [
+    {
+     "id": "personal_finance_credit",
+     "desc": "Household budgets, loans, credit cards, and personal borrowing"
+    },
+    {
+     "id": "investing_financial_markets",
+     "desc": "Investments, securities, trading, and financial markets"
+    },
+    {
+     "id": "economics_prices",
+     "desc": "Economic conditions, prices, inflation, and consumer behavior"
+    },
+    {
+     "id": "entrepreneurship_business",
+     "desc": "Starting, operating, and growing businesses"
+    },
+    {
+     "id": "marketing_advertising",
+     "desc": "Promotion, branding, campaigns, search marketing, and customer acquisition"
+    },
+    {
+     "id": "management_human_resources",
+     "desc": "Leadership, staffing, workplace policies, and human resource practices"
+    },
+    {
+     "id": "accounting_tax_insurance",
+     "desc": "Bookkeeping, taxation, insurance, and financial compliance"
+    },
+    {
+     "id": "jobs_workplace",
+     "desc": "Employment opportunities, interviews, careers, and workplace experience"
+    },
+    {
+     "id": "commerce_customer_service",
+     "desc": "Sales, orders, refunds, customer support, and retail transactions"
+    },
+    {
+     "id": "business_technology_strategy",
+     "desc": "Business planning, digital tools, productivity, and organizational change"
+    }
+   ]
+  },
+  {
+   "group": "government_law_politics",
+   "group_desc": "Legal systems, political institutions, public policy, and civic affairs",
+   "concepts": [
+    {
+     "id": "law_rights_cases",
+     "desc": "Legal rights, court cases, laws, and legal advice"
+    },
+    {
+     "id": "criminal_justice_policing",
+     "desc": "Crime, law enforcement, prosecution, and corrections"
+    },
+    {
+     "id": "constitutional_government",
+     "desc": "Constitutions, government powers, and public institutions"
+    },
+    {
+     "id": "elections_political_parties",
+     "desc": "Candidates, elections, parties, and political campaigns"
+    },
+    {
+     "id": "public_administration",
+     "desc": "Government agencies, public services, and administrative decisions"
+    },
+    {
+     "id": "public_policy_welfare",
+     "desc": "Social programs, public policy, and government support"
+    },
+    {
+     "id": "international_relations",
+     "desc": "Diplomacy, foreign policy, and relations between countries"
+    },
+    {
+     "id": "military_defense",
+     "desc": "Armed forces, military operations, and defense policy"
+    },
+    {
+     "id": "activism_civic_participation",
+     "desc": "Advocacy, protest, civic organizing, and public participation"
+    },
+    {
+     "id": "regulation_compliance",
+     "desc": "Rules, licensing, regulatory oversight, and compliance requirements"
+    }
+   ]
+  },
+  {
+   "group": "history_geography",
+   "group_desc": "Places, populations, past societies, and historical evidence",
+   "concepts": [
+    {
+     "id": "ancient_civilizations",
+     "desc": "Ancient peoples, states, cultures, and historical periods"
+    },
+    {
+     "id": "modern_history",
+     "desc": "Modern-era events, social changes, and historical developments"
+    },
+    {
+     "id": "historical_biographies",
+     "desc": "Lives and achievements of people discussed in historical context"
+    },
+    {
+     "id": "regional_geography",
+     "desc": "Geographic features, regions, cities, and local characteristics"
+    },
+    {
+     "id": "countries_population",
+     "desc": "Countries, demographics, population patterns, and national profiles"
+    },
+    {
+     "id": "archaeology_human_origins",
+     "desc": "Archaeological evidence, artifacts, and human origins"
+    },
+    {
+     "id": "heritage_monuments",
+     "desc": "Historic buildings, cultural heritage, and monuments"
+    },
+    {
+     "id": "wars_historical_conflicts",
+     "desc": "Wars, military campaigns, and conflicts of the past"
+    },
+    {
+     "id": "migration_settlement",
+     "desc": "Migration, settlement patterns, and population movement"
+    },
+    {
+     "id": "historical_scholarship",
+     "desc": "Historical sources, interpretation, and academic historical research"
+    }
+   ]
+  },
+  {
+   "group": "society_relationships",
+   "group_desc": "Social groups, personal relationships, behavior, and shared norms",
+   "concepts": [
+    {
+     "id": "family_parenting",
+     "desc": "Parenting, child development, family life, and caregiving"
+    },
+    {
+     "id": "romantic_relationships",
+     "desc": "Dating, partnership, intimacy, and relationship decisions"
+    },
+    {
+     "id": "gender_sexuality",
+     "desc": "Gender roles, identity, sexuality, and related social issues"
+    },
+    {
+     "id": "race_ethnicity_caste",
+     "desc": "Race, ethnicity, caste, and identity-based experiences"
+    },
+    {
+     "id": "social_inequality_class",
+     "desc": "Social class, inequality, discrimination, and unequal opportunity"
+    },
+    {
+     "id": "community_social_services",
+     "desc": "Community support, social services, and local social needs"
+    },
+    {
+     "id": "interpersonal_communication",
+     "desc": "Conversation, disclosure, conflict, and communication between people"
+    },
+    {
+     "id": "psychology_human_behavior",
+     "desc": "Thought, motivation, personality, and individual behavior"
+    },
+    {
+     "id": "sociology_social_change",
+     "desc": "Social structures, group behavior, and changes in society"
+    },
+    {
+     "id": "ethics_moral_questions",
+     "desc": "Moral dilemmas, ethical judgments, and standards of conduct"
+    }
+   ]
+  },
+  {
+   "group": "religion_philosophy",
+   "group_desc": "Faith traditions, spiritual practice, and fundamental ideas",
+   "concepts": [
+    {
+     "id": "religious_beliefs_practice",
+     "desc": "Beliefs, worship, and everyday practice within a religious tradition"
+    },
+    {
+     "id": "scripture_theology",
+     "desc": "Sacred texts, doctrines, and theological interpretation"
+    },
+    {
+     "id": "spirituality_meditation",
+     "desc": "Personal spirituality, meditation, and contemplative practice"
+    },
+    {
+     "id": "religious_history_institutions",
+     "desc": "Religious leaders, institutions, movements, and historical development"
+    },
+    {
+     "id": "rituals_holidays",
+     "desc": "Religious ceremonies, observances, and sacred calendar events"
+    },
+    {
+     "id": "comparative_religion",
+     "desc": "Comparisons among religions, denominations, or religious communities"
+    },
+    {
+     "id": "philosophy_knowledge_mind",
+     "desc": "Philosophical questions about knowledge, reality, and consciousness"
+    },
+    {
+     "id": "political_philosophy",
+     "desc": "Ideas about justice, freedom, authority, and political society"
+    },
+    {
+     "id": "existential_worldviews",
+     "desc": "Meaning, existence, human purpose, and broad worldviews"
+    },
+    {
+     "id": "secular_ethics",
+     "desc": "Nonreligious moral theories and philosophical approaches to values"
+    }
+   ]
+  },
+  {
+   "group": "arts_entertainment",
+   "group_desc": "Creative works, popular culture, performance, and media criticism",
+   "concepts": [
+    {
+     "id": "film_television",
+     "desc": "Movies, television programs, episodes, and screen storytelling"
+    },
+    {
+     "id": "music_performance",
+     "desc": "Songs, musicians, albums, concerts, and musical performance"
+    },
+    {
+     "id": "literature_books",
+     "desc": "Books, authors, literary works, and reading"
+    },
+    {
+     "id": "visual_arts_design",
+     "desc": "Painting, visual art, graphic design, and artistic styles"
+    },
+    {
+     "id": "theatre_dance",
+     "desc": "Stage productions, acting, dance, and theatrical performance"
+    },
+    {
+     "id": "celebrity_pop_culture",
+     "desc": "Public figures, fandom, and popular culture discussion"
+    },
+    {
+     "id": "media_criticism_reviews",
+     "desc": "Critical assessment of films, books, music, or other media"
+    },
+    {
+     "id": "creative_writing_fiction",
+     "desc": "Fiction, narrative craft, and imaginative writing"
+    },
+    {
+     "id": "photography_image_making",
+     "desc": "Photography, image-making techniques, and visual documentation"
+    },
+    {
+     "id": "comics_animation",
+     "desc": "Comics, manga, animation, and illustrated storytelling"
+    }
+   ]
+  },
+  {
+   "group": "sports_recreation",
+   "group_desc": "Competitive sports, games, hobbies, and outdoor leisure",
+   "concepts": [
+    {
+     "id": "sports_news_results",
+     "desc": "Sports events, scores, teams, athletes, and competition results"
+    },
+    {
+     "id": "sports_analysis_strategy",
+     "desc": "Tactics, performance analysis, and sports commentary"
+    },
+    {
+     "id": "sports_rules_training",
+     "desc": "Sports rules, coaching, practice, and athletic training"
+    },
+    {
+     "id": "video_games_esports",
+     "desc": "Video games, gaming communities, and esports"
+    },
+    {
+     "id": "tabletop_games_hobbies",
+     "desc": "Board games, card games, collecting, and hobby activities"
+    },
+    {
+     "id": "puzzles_recreational",
+     "desc": "Word games, brainteasers, and recreational puzzles"
+    },
+    {
+     "id": "outdoor_adventure",
+     "desc": "Outdoor recreation, nature trips, and adventure activities"
+    },
+    {
+     "id": "camping_hiking",
+     "desc": "Camping, hiking, trails, and outdoor equipment"
+    },
+    {
+     "id": "wildlife_observation",
+     "desc": "Watching, identifying, or documenting wild animals"
+    },
+    {
+     "id": "leisure_recreation",
+     "desc": "Recreational activities and leisure interests not otherwise specified"
+    }
+   ]
+  },
+  {
+   "group": "consumer_home_lifestyle",
+   "group_desc": "Food, household life, personal care, and consumer choices",
+   "concepts": [
+    {
+     "id": "cooking_recipes",
+     "desc": "Ingredients, recipes, cooking methods, and food preparation"
+    },
+    {
+     "id": "food_drink_culture",
+     "desc": "Food traditions, ingredients, drinks, and culinary culture"
+    },
+    {
+     "id": "restaurants_dining",
+     "desc": "Restaurants, dining experiences, menus, and food service"
+    },
+    {
+     "id": "home_repair_maintenance",
+     "desc": "Household repairs, cleaning, appliances, and property upkeep"
+    },
+    {
+     "id": "gardening_houseplants",
+     "desc": "Growing plants, garden design, and houseplant care"
+    },
+    {
+     "id": "consumer_product_advice",
+     "desc": "Product features, buying advice, and practical consumer comparisons"
+    },
+    {
+     "id": "fashion_beauty_grooming",
+     "desc": "Clothing, cosmetics, personal grooming, and beauty products"
+    },
+    {
+     "id": "household_management",
+     "desc": "Domestic routines, household organization, and everyday home advice"
+    },
+    {
+     "id": "pet_care",
+     "desc": "Care, behavior, feeding, and health of domestic animals"
+    },
+    {
+     "id": "personal_lifestyle_habits",
+     "desc": "Everyday habits, self-improvement, and personal lifestyle choices"
+    }
+   ]
+  },
+  {
+   "group": "travel_places_community",
+   "group_desc": "Travel, local places, civic life, and environmental concerns",
+   "concepts": [
+    {
+     "id": "travel_destinations",
+     "desc": "Places to visit, destination attractions, and tourism experiences"
+    },
+    {
+     "id": "travel_planning_transport",
+     "desc": "Itineraries, travel logistics, routes, and transportation choices"
+    },
+    {
+     "id": "local_community_news",
+     "desc": "Reports about local residents, organizations, and community developments"
+    },
+    {
+     "id": "city_regional_guides",
+     "desc": "Guides to cities, neighborhoods, and regional attractions"
+    },
+    {
+     "id": "housing_real_estate",
+     "desc": "Homes, property markets, housing, and real estate"
+    },
+    {
+     "id": "public_infrastructure",
+     "desc": "Roads, public facilities, utilities, and local infrastructure"
+    },
+    {
+     "id": "festivals_cultural_events",
+     "desc": "Festivals, public celebrations, and cultural events"
+    },
+    {
+     "id": "tourism_hospitality",
+     "desc": "Tour operators, accommodation, and hospitality services"
+    },
+    {
+     "id": "environment_sustainability",
+     "desc": "Pollution, climate action, recycling, and sustainable communities"
+    },
+    {
+     "id": "transportation_travel_safety",
+     "desc": "Travel hazards, transportation access, and passenger safety"
+    }
+   ]
+  },
+  {
+   "group": "language_reference_miscellany",
+   "group_desc": "Language, reference material, metadata, and residual corpus topics",
+   "concepts": [
+    {
+     "id": "language_grammar_usage",
+     "desc": "Grammar, usage, spelling, pronunciation, and language conventions"
+    },
+    {
+     "id": "word_origins_names",
+     "desc": "Word histories, name meanings, and etymological explanations"
+    },
+    {
+     "id": "translation_multilingual",
+     "desc": "Translation, multilingual material, and cross-language communication"
+    },
+    {
+     "id": "encyclopedic_facts",
+     "desc": "Concise factual descriptions of named people, places, or things"
+    },
+    {
+     "id": "reference_catalog_entries",
+     "desc": "Catalogs, directories, indexes, and structured reference listings"
+    },
+    {
+     "id": "academic_citations_bibliographies",
+     "desc": "Citations, bibliographies, source lists, and scholarly references"
+    },
+    {
+     "id": "web_content_metadata",
+     "desc": "Website labels, navigation text, page metadata, and platform details"
+    },
+    {
+     "id": "organizations_people_profiles",
+     "desc": "Profiles or descriptions of organizations and people outside other topics"
+    },
+    {
+     "id": "corrupted_spam_text",
+     "desc": "Scraped, duplicated, nonsensical, or heavily corrupted text"
+    },
+    {
+     "id": "other_topic_catchall",
+     "desc": "Corpus-relevant subject matter that fits none of the defined topics"
+    }
+   ]
+  }
+ ],
+ "format": [
+  {
+   "id": "article_explainer",
+   "desc": "Continuous prose explaining a subject with headings or examples"
+  },
+  {
+   "id": "how_to_tutorial",
+   "desc": "An instructional article teaching a task or skill"
+  },
+  {
+   "id": "step_by_step_procedure",
+   "desc": "Ordered actions or numbered steps for completing a process"
+  },
+  {
+   "id": "listicle_roundup",
+   "desc": "A themed collection of numbered or bulleted items"
+  },
+  {
+   "id": "faq",
+   "desc": "A set of frequently asked questions with concise answers"
+  },
+  {
+   "id": "question_answer_pairs",
+   "desc": "Explicit question-and-answer pairs presented as reference content"
+  },
+  {
+   "id": "forum_question",
+   "desc": "A user seeking advice or information from an online community"
+  },
+  {
+   "id": "forum_discussion_thread",
+   "desc": "Replies, quotations, or debate in a discussion thread"
+  },
+  {
+   "id": "social_media_post",
+   "desc": "A short informal post written for a social platform"
+  },
+  {
+   "id": "news_report",
+   "desc": "Factual reporting on a recent event or development"
+  },
+  {
+   "id": "opinion_editorial",
+   "desc": "Argumentative commentary expressing a viewpoint on public affairs"
+  },
+  {
+   "id": "personal_blog_essay",
+   "desc": "First-person reflective prose or an informal personal essay"
+  },
+  {
+   "id": "product_review",
+   "desc": "Evaluation of a product based on features or user experience"
+  },
+  {
+   "id": "service_review",
+   "desc": "Evaluation of a venue, service, or visitor experience"
+  },
+  {
+   "id": "product_comparison",
+   "desc": "Side-by-side assessment of competing products or options"
+  },
+  {
+   "id": "product_listing",
+   "desc": "Sales-oriented item description with specifications or purchasing details"
+  },
+  {
+   "id": "marketing_landing_copy",
+   "desc": "Promotional copy advocating a company, service, or product"
+  },
+  {
+   "id": "press_release",
+   "desc": "Formal organizational announcement written for media distribution"
+  },
+  {
+   "id": "event_announcement",
+   "desc": "Notice promoting a specific upcoming event or activity"
+  },
+  {
+   "id": "event_calendar_listing",
+   "desc": "Compact schedule entry giving event dates, place, or program"
+  },
+  {
+   "id": "interview_transcript",
+   "desc": "Question-led exchange attributed to named interview participants"
+  },
+  {
+   "id": "dialogue_script",
+   "desc": "Formatted spoken exchange intended as a script or scene"
+  },
+  {
+   "id": "academic_research_article",
+   "desc": "Scholarly paper presenting research, methods, results, or argument"
+  },
+  {
+   "id": "research_abstract_poster",
+   "desc": "Compressed research summary or academic poster text"
+  },
+  {
+   "id": "formal_report",
+   "desc": "Structured institutional or professional account of findings or activity"
+  },
+  {
+   "id": "proposal_grant_application",
+   "desc": "Request for funding, approval, or support with aims and eligibility"
+  },
+  {
+   "id": "school_newsletter",
+   "desc": "Recurring school or campus update for families or students"
+  },
+  {
+   "id": "lesson_textbook",
+   "desc": "Educational exposition organized to teach course content"
+  },
+  {
+   "id": "multiple_choice_question",
+   "desc": "Assessment question followed by labeled answer options"
+  },
+  {
+   "id": "worked_solution",
+   "desc": "A problem followed by a reasoned sequence of calculations or answers"
+  },
+  {
+   "id": "programming_task_solution",
+   "desc": "Coding prompt accompanied by implementation or programming guidance"
+  },
+  {
+   "id": "source_code_snippet",
+   "desc": "Code presented primarily as a standalone example or excerpt"
+  },
+  {
+   "id": "technical_documentation",
+   "desc": "Reference material describing software commands, APIs, or configuration"
+  },
+  {
+   "id": "manual_user_guide",
+   "desc": "Operational instructions for using a device, product, or system"
+  },
+  {
+   "id": "recipe_card",
+   "desc": "Ingredients and cooking directions for preparing a dish"
+  },
+  {
+   "id": "biography_profile",
+   "desc": "Profile or life account centered on a person or organization"
+  },
+  {
+   "id": "reference_entry",
+   "desc": "Encyclopedic, dictionary, glossary, or catalog-style entry"
+  },
+  {
+   "id": "table_dataset_dump",
+   "desc": "Tabular records, raw data, or structured values without sustained prose"
+  },
+  {
+   "id": "email_letter",
+   "desc": "Direct correspondence with a recognizable sender and recipient"
+  },
+  {
+   "id": "other_format_catchall",
+   "desc": "Corpus-relevant document form that fits none of the defined formats"
+  }
+ ]
+}

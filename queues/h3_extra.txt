@@ -1,0 +1,4 @@
+h3_w1 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin anchor=runs/init_s/anc_all.bin anchor_lambda=1
+h3_f01 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin labels=labels/train.bin n_lab=8 concept_layer=0 concept_w=0.1
+h3_w10_in d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin anchor=runs/init_s/anc_in.bin anchor_lambda=10
+h3_w10_out d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin anchor=runs/init_s/anc_out.bin anchor_lambda=10

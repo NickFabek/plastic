@@ -1,0 +1,2 @@
+m_base d=384 L=6 B=32 accum=2 lr=2.7e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=500 probe=labels/probe.bin tokens=100000000
+m_ind d=384 L=6 B=32 accum=2 lr=2.7e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=500 probe=labels/probe.bin tokens=100000000 init_from=runs/init_m/ind.bin

@@ -1,0 +1,16 @@
+h2_c_jev d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin
+h2_c_kmeans d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_kmeans.bin
+h2_c_shuf d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_shuf.bin
+h2_c_coarse d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_coarse.bin
+h3_w1 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin anchor=runs/init_s/anc_all.bin anchor_lambda=1
+h3_w10 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin anchor=runs/init_s/anc_all.bin anchor_lambda=10
+h3_w100 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin anchor=runs/init_s/anc_all.bin anchor_lambda=100
+h3_w10_crit d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin anchor=runs/init_s/anc_all.bin anchor_lambda=10 anchor_sched=linear anchor_end=0.5
+h3_w10_ema d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin anchor=runs/init_s/anc_all.bin anchor_lambda=10 anchor_ema=0.002
+h3_w10_in d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin anchor=runs/init_s/anc_in.bin anchor_lambda=10
+h3_w10_out d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin anchor=runs/init_s/anc_out.bin anchor_lambda=10
+h3_f01 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin labels=labels/train.bin n_lab=8 concept_layer=0 concept_w=0.1
+h3_f1 d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin labels=labels/train.bin n_lab=8 concept_layer=0 concept_w=1
+h3_f1_crit d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 init_from=runs/init_s/c_jev.bin labels=labels/train.bin n_lab=8 concept_layer=0 concept_w=1 concept_sched=linear concept_end=0.5
+h3_f1_rand d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 labels=labels/train.bin n_lab=8 concept_layer=0 concept_w=1
+h3_w10_rand d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 anchor=runs/init_s/anc_rand.bin anchor_lambda=10

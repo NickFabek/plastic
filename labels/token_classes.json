@@ -1,0 +1,258 @@
+[
+ {
+  "id": "line_breaks",
+  "desc": "Newline-only tokens, including repeated line breaks."
+ },
+ {
+  "id": "space_tokens",
+  "desc": "Standalone ordinary-space tokens."
+ },
+ {
+  "id": "tab_whitespace",
+  "desc": "Standalone tabs or other horizontal whitespace."
+ },
+ {
+  "id": "special_tokens",
+  "desc": "Document boundaries and dedicated control or special tokens."
+ },
+ {
+  "id": "replacement_chars",
+  "desc": "Replacement characters and visibly corrupted text fragments."
+ },
+ {
+  "id": "periods",
+  "desc": "Sentence-ending periods and period punctuation clusters."
+ },
+ {
+  "id": "commas",
+  "desc": "Comma punctuation, including comma-led clusters."
+ },
+ {
+  "id": "colon_semicolon",
+  "desc": "Colons and semicolons, including adjacent punctuation clusters."
+ },
+ {
+  "id": "question_exclamation",
+  "desc": "Question marks and exclamation marks, including closing clusters."
+ },
+ {
+  "id": "quotes_apostrophes",
+  "desc": "Quotation marks, apostrophes, and quote-attached punctuation."
+ },
+ {
+  "id": "open_parens",
+  "desc": "Opening parentheses, optionally with preceding whitespace."
+ },
+ {
+  "id": "close_parens",
+  "desc": "Closing parentheses, optionally with following punctuation."
+ },
+ {
+  "id": "open_brackets",
+  "desc": "Opening square brackets, optionally with preceding whitespace."
+ },
+ {
+  "id": "close_brackets",
+  "desc": "Closing square brackets, optionally with following punctuation."
+ },
+ {
+  "id": "open_braces",
+  "desc": "Opening braces, optionally with preceding whitespace."
+ },
+ {
+  "id": "close_braces",
+  "desc": "Closing braces, optionally with following punctuation."
+ },
+ {
+  "id": "dashes_hyphens",
+  "desc": "Hyphens, dashes, and their whitespace-prefixed forms."
+ },
+ {
+  "id": "slashes_backslashes",
+  "desc": "Slash and backslash punctuation outside other clear roles."
+ },
+ {
+  "id": "dots_ellipsis",
+  "desc": "Ellipses and non-sentence dot sequences."
+ },
+ {
+  "id": "markdown_markers",
+  "desc": "Markdown emphasis, heading, fence, and inline-code markers."
+ },
+ {
+  "id": "assignment_operators",
+  "desc": "Assignment, equality, and compound-assignment operators."
+ },
+ {
+  "id": "arithmetic_operators",
+  "desc": "Arithmetic operators such as plus, minus, multiply, and modulo."
+ },
+ {
+  "id": "comparison_operators",
+  "desc": "Comparison, logical, and arrow-like operators."
+ },
+ {
+  "id": "code_separators",
+  "desc": "Code-context separators and punctuation not covered by bracket classes."
+ },
+ {
+  "id": "currency_percent",
+  "desc": "Currency symbols, percent signs, and numeric grouping punctuation."
+ },
+ {
+  "id": "math_symbols",
+  "desc": "Mathematical notation symbols outside ordinary arithmetic operators."
+ },
+ {
+  "id": "single_digits",
+  "desc": "Single decimal digits, with or without a leading space."
+ },
+ {
+  "id": "multi_digit_numbers",
+  "desc": "Complete multi-digit numerals, years, and numeric constants."
+ },
+ {
+  "id": "numeric_fragments",
+  "desc": "Signs, decimal pieces, exponents, and other numeral fragments."
+ },
+ {
+  "id": "number_words",
+  "desc": "Spelled-out numbers, number names, and ordinal words."
+ },
+ {
+  "id": "units",
+  "desc": "Measurement units and conventional unit abbreviations."
+ },
+ {
+  "id": "code_literals",
+  "desc": "Code-context booleans, nulls, and literal-value fragments."
+ },
+ {
+  "id": "code_keywords",
+  "desc": "Programming language keywords and declaration or control words."
+ },
+ {
+  "id": "code_builtins",
+  "desc": "Common programming builtins, library names, and callable primitives."
+ },
+ {
+  "id": "code_identifiers",
+  "desc": "Code variables, functions, properties, and identifier fragments."
+ },
+ {
+  "id": "markup_names",
+  "desc": "HTML, XML, and markup tag or attribute names."
+ },
+ {
+  "id": "determiners",
+  "desc": "Word-initial articles, demonstratives, quantifiers, and possessive determiners."
+ },
+ {
+  "id": "pronouns",
+  "desc": "Word-initial personal, relative, and interrogative pronouns."
+ },
+ {
+  "id": "prepositions",
+  "desc": "Word-initial prepositions and common prepositional particles."
+ },
+ {
+  "id": "conjunctions",
+  "desc": "Word-initial coordinating and subordinating conjunctions."
+ },
+ {
+  "id": "auxiliaries_modals",
+  "desc": "Word-initial auxiliary verbs, modals, and forms of be or have."
+ },
+ {
+  "id": "negation_particles",
+  "desc": "Word-initial negators, contractions, and short discourse particles."
+ },
+ {
+  "id": "adverbs_particles",
+  "desc": "Word-initial adverbs, intensifiers, and verb particles."
+ },
+ {
+  "id": "verbs",
+  "desc": "Word-initial lexical verbs and verb forms."
+ },
+ {
+  "id": "nouns",
+  "desc": "Word-initial common nouns and nominal forms."
+ },
+ {
+  "id": "adjectives",
+  "desc": "Word-initial adjectives and participles used attributively."
+ },
+ {
+  "id": "proper_names",
+  "desc": "Word-initial personal, place, organization, and product names."
+ },
+ {
+  "id": "acronyms",
+  "desc": "Initialisms, all-capital abbreviations, and acronym fragments."
+ },
+ {
+  "id": "sentence_starts",
+  "desc": "Capitalized common words beginning sentences or headings."
+ },
+ {
+  "id": "unspaced_function_words",
+  "desc": "Unspaced complete grammatical words, including contractions."
+ },
+ {
+  "id": "unspaced_content_words",
+  "desc": "Unspaced complete ordinary words not clearly names or code."
+ },
+ {
+  "id": "lowercase_word_starts",
+  "desc": "Unspaced lowercase pieces beginning words, judged from context."
+ },
+ {
+  "id": "uppercase_fragments",
+  "desc": "Capitalized word fragments that continue names or words."
+ },
+ {
+  "id": "ing_suffixes",
+  "desc": "Word-final or word-internal pieces spelling the suffix -ing."
+ },
+ {
+  "id": "past_suffixes",
+  "desc": "Pieces spelling common past-tense or participial endings."
+ },
+ {
+  "id": "plural_suffixes",
+  "desc": "Pieces spelling plural, possessive, or third-person endings."
+ },
+ {
+  "id": "derivational_suffixes",
+  "desc": "Pieces spelling common derivational endings such as -tion or -ity."
+ },
+ {
+  "id": "word_prefixes",
+  "desc": "Common word-initial prefixes attached to continuing words."
+ },
+ {
+  "id": "medial_fragments",
+  "desc": "Lowercase alphabetic pieces continuing a word, excluding clear suffixes."
+ },
+ {
+  "id": "short_letter_fragments",
+  "desc": "Single-letter and very short alphabetic fragments, judged in context."
+ },
+ {
+  "id": "multilingual_fragments",
+  "desc": "Non-English or mixed-script word pieces not otherwise classifiable."
+ },
+ {
+  "id": "emoji_symbols",
+  "desc": "Emoji and pictographic symbols outside punctuation or mathematical notation."
+ },
+ {
+  "id": "math_variables",
+  "desc": "Standalone or attached algebraic variables and Greek-letter name pieces."
+ },
+ {
+  "id": "catch_all",
+  "desc": "Anything not confidently assigned above, including rare symbols and fragments."
+ }
+]

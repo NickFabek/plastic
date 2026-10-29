@@ -1,0 +1,14 @@
+{
+ "jev": {
+  "usd": 2.8573422800001143,
+  "input_tokens": 71433557,
+  "output_tokens": 62618076,
+  "requests": 40021
+ },
+ "openai": {
+  "usd": 0.010096899999999999,
+  "input_tokens": 40799,
+  "output_tokens": 12034,
+  "requests": 2
+ }
+}

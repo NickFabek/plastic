@@ -1,0 +1,305 @@
+<title>PLASTIC</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column (~66ch) on a microscope slide; figures and the microscope break out to a wider plate.
+   Palette = H&E stain: eosin (pink) marks constructed / LLM-named things, hematoxylin (blue-violet) marks learned ones. */
+:root {
+  --slide: #f4f6f9;        /* page ground: cool slide glass */
+  --plate: #ffffff;        /* figure plates */
+  --ink: #1b1d2a;          /* text */
+  --muted: #5b6075;        /* secondary text */
+  --rule: #d9dde7;         /* hairlines, grid */
+  --hema: #3d3a9e;         /* hematoxylin: learned / baseline */
+  --eosin: #c8336f;        /* eosin: constructed / LLM-named */
+  --hema-soft: #e6e5f6;
+  --eosin-soft: #f8e1ea;
+  --ok: #1f7a55;
+  --warn: #9a5b00;
+  /* chart series, validated order (CVD + normal-vision separation, both themes): baseline, k-means, class bigram, LLM classes, Jev */
+  --s1: #6250d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #c8336f; --s6: #008300;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --step--1: 0.84rem; --step-0: 1.06rem; --step-1: 1.3rem; --step-2: 1.7rem; --step-3: 2.4rem; --step-4: 3.4rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --slide: #10121a; --plate: #171a25; --ink: #e7e8f0; --muted: #9aa0b8; --rule: #2a2f40;
+    --hema: #9d98ff; --eosin: #ff7aa8; --hema-soft: #262646; --eosin-soft: #3a1f2c; --ok: #5fd1a0; --warn: #f0b45a;
+    --s1: #9085e9; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --slide: #10121a; --plate: #171a25; --ink: #e7e8f0; --muted: #9aa0b8; --rule: #2a2f40;
+  --hema: #9d98ff; --eosin: #ff7aa8; --hema-soft: #262646; --eosin-soft: #3a1f2c; --ok: #5fd1a0; --warn: #f0b45a;
+  --s1: #9085e9; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181; --s6: #008300;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--slide); color: var(--ink); font: 400 var(--step-0)/1.62 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 4rem;
+}
+main { max-width: 1080px; margin: 0 auto; display: grid; gap: 2.4rem; }
+.col { max-width: 66ch; width: 100%; margin: 0 auto; min-width: 0; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; line-height: 1.12; margin: 0; }
+h1 { font-size: var(--step-4); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: var(--step-2); font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: var(--step-1); font-weight: 500; }
+p { margin: 0; }
+.stack { display: grid; gap: 1rem; }
+.eyebrow { font: 600 var(--step--1)/1.3 var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+a { color: var(--hema); }
+a:focus-visible, button:focus-visible, select:focus-visible, textarea:focus-visible, input:focus-visible { outline: 2px solid var(--eosin); outline-offset: 2px; }
+.mono, code { font-family: var(--f-mono); font-size: 0.9em; }
+.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.c-eo { color: var(--eosin); } .c-he { color: var(--hema); }
+header.hero { padding-top: 3.2rem; display: grid; gap: 1.1rem; }
+.hero .lede { font-size: var(--step-1); line-height: 1.5; color: var(--ink); }
+.hero .byline { font: 400 var(--step--1)/1.4 var(--f-mono); color: var(--muted); }
+.verdict { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.verdict > div { background: var(--plate); padding: 0.9rem 1rem; display: grid; gap: 0.25rem; align-content: start; }
+.verdict .k { font: 600 var(--step--1)/1.3 var(--f-mono); letter-spacing: 0.04em; color: var(--muted); text-transform: uppercase; }
+.verdict .v { font: 700 var(--step-2)/1.1 var(--f-display); }
+.verdict .s { font-size: var(--step--1); color: var(--muted); line-height: 1.4; }
+figure { margin: 0; background: var(--plate); border: 1px solid var(--rule); border-radius: 6px; padding: 1.1rem 1.1rem 0.9rem; display: grid; gap: 0.8rem; min-width: 0; }
+figure .fig-head { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: baseline; justify-content: space-between; }
+figure .fig-title { font: 500 var(--step-0)/1.3 var(--f-display); }
+figcaption { font-size: var(--step--1); color: var(--muted); line-height: 1.5; max-width: 80ch; }
+.chart { width: 100%; min-width: 0; overflow-x: auto; }
+.chart svg { display: block; max-width: none; font-family: var(--f-mono); }
+.chart svg text { fill: var(--muted); font-size: 11px; }
+.chart svg .grid { stroke: var(--rule); stroke-width: 1; }
+.chart svg .axis { stroke: var(--muted); stroke-width: 1; }
+.chart svg .lbl { fill: var(--ink); }
+.legend { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; font: 400 var(--step--1)/1.3 var(--f-mono); color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.legend i { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 1rem; }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font: 400 var(--step--1)/1.4 var(--f-mono); font-variant-numeric: tabular-nums; }
+th, td { text-align: right; padding: 0.38rem 0.6rem; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--muted); font-weight: 600; }
+td .pill { display: inline-block; padding: 0.05rem 0.45rem; border-radius: 999px; font-size: 0.85em; }
+.pill.eo { background: var(--eosin-soft); color: var(--eosin); } .pill.he { background: var(--hema-soft); color: var(--hema); }
+.pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: 0.6rem; counter-reset: st; }
+.pipeline > div { background: var(--plate); border: 1px solid var(--rule); border-radius: 6px; padding: 0.8rem 0.9rem; display: grid; gap: 0.35rem; align-content: start; }
+.pipeline .who { font: 600 var(--step--1)/1.2 var(--f-mono); color: var(--eosin); }
+.pipeline .what { font: 500 var(--step-0)/1.25 var(--f-display); }
+.pipeline .how { font-size: var(--step--1); color: var(--muted); line-height: 1.45; }
+.note { border-left: 3px solid var(--eosin); padding: 0.2rem 0 0.2rem 0.9rem; color: var(--ink); }
+/* microscope */
+.scope { display: grid; gap: 0.9rem; min-width: 0; }
+.controls { display: flex; flex-wrap: wrap; gap: 0.6rem 0.9rem; align-items: end; }
+.controls label { display: grid; gap: 0.25rem; font: 600 var(--step--1)/1.2 var(--f-mono); color: var(--muted); min-width: 0; max-width: 100%; }
+.controls label:first-child { flex: 1 1 22rem; }
+.controls select { width: 100%; max-width: 100%; text-overflow: ellipsis; }
+select, input[type=range], textarea, button { font: inherit; }
+select, textarea { background: var(--slide); color: var(--ink); border: 1px solid var(--rule); border-radius: 5px; padding: 0.4rem 0.5rem; }
+textarea { width: 100%; min-height: 6.5rem; font: 400 0.95rem/1.5 var(--f-mono); resize: vertical; }
+button { cursor: pointer; border-radius: 5px; padding: 0.45rem 0.95rem; border: 1px solid var(--hema); background: var(--hema); color: var(--plate); font: 600 var(--step--1)/1.2 var(--f-mono); }
+button.ghost { background: transparent; color: var(--hema); }
+button:disabled { opacity: 0.5; cursor: progress; }
+.status { font: 400 var(--step--1)/1.4 var(--f-mono); color: var(--muted); min-height: 1.4em; }
+.tokens { font: 400 0.95rem/2.05 var(--f-mono); white-space: pre-wrap; word-break: break-word; background: var(--slide); border: 1px solid var(--rule); border-radius: 5px; padding: 0.6rem 0.7rem; min-height: 4rem; }
+.tok { border-radius: 3px; padding: 0.08rem 0; cursor: pointer; transition: outline-color 0.1s; outline: 1px solid transparent; }
+.tok:hover, .tok.sel { outline-color: var(--ink); }
+.tok.gen { text-decoration: underline dotted var(--muted); text-underline-offset: 4px; }
+.inspect { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 0.9rem; }
+.inspect > div { min-width: 0; }
+.bars { display: grid; gap: 0.3rem; font: 400 var(--step--1)/1.25 var(--f-mono); }
+.bar { display: grid; grid-template-columns: minmax(0, 1fr) 4.2rem; gap: 0.5rem; align-items: center; }
+.bar .lab { position: relative; padding: 0.15rem 0.4rem; border-radius: 3px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.bar .lab i { position: absolute; inset: 0 auto 0 0; background: var(--eosin-soft); z-index: 0; }
+.bar .lab b { position: relative; z-index: 1; font-weight: 400; }
+.bar .val { text-align: right; color: var(--muted); }
+.bars.he .bar .lab i { background: var(--hema-soft); }
+footer { font-size: var(--step--1); color: var(--muted); }
+@media (max-width: 560px) { h1 { font-size: var(--step-3); } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<main>
+  <header class="hero col">
+    <div class="eyebrow">Interpretability × training efficiency · small-scale experiments</div>
+    <h1>PLASTIC</h1>
+    <p class="lede">If trained neurons really are clean abstractions, can we <em>write</em> them from an LLM's description of the data instead of learning them, and then hold them in place while the network trains?</p>
+    <p class="byline" id="byline">GPT-2-token ClimbMix · 29M-parameter GPT trained from scratch in hand-written CUDA on one RTX 3080</p>
+  </header>
+
+  <section class="stack" id="verdict-wrap">
+    <div class="verdict" id="verdict"></div>
+  </section>
+
+  <section class="col stack" id="idea">
+    <div class="eyebrow">The idea</div>
+    <h2>Neurons as abstractions you can write down</h2>
+    <p>Goodfire's essay <a href="https://already-clean.goodfire.com" target="_blank" rel="noopener">Neural networks are already clean</a> argues that a network's own neurons are mostly monosemantic. They are not buckets of unrelated features. Each encodes an abstraction that is coarse when neurons are scarce and sharpens with scale. If that is right, an abstraction is something you could name in advance, bin data into, and turn into weights.</p>
+    <p>PLASTIC tests that directly. An LLM reads the corpus and proposes abstractions. A second model sorts text into them. Closed-form statistics of each bin (no gradient descent) become a neuron's input and output weights. Then the network trains normally, optionally with a <strong>righting force</strong> that pulls the written neurons back toward their assigned meaning, the way a keel pulls a heeling boat upright.</p>
+  </section>
+
+  <section class="pipeline" aria-label="Pipeline">
+    <div><span class="who">gpt-6-luna</span><span class="what">Propose abstractions</span><span class="how">Reads 300 sampled passages, returns 160 topics in 16 groups and 40 formats. A second prompt returns 64 token classes.</span></div>
+    <div><span class="who">Jev (TypeSafe)</span><span class="what">Bin the data</span><span class="how">Choice questions give a calibrated distribution over every concept for 24k passages and the top 16k tokens.</span></div>
+    <div><span class="who">closed form</span><span class="what">Write the weights</span><span class="how">Token classes become a class-bigram in the embeddings. Topics become an evidence head plus one MLP neuron per concept.</span></div>
+    <div><span class="who">CUDA trainer</span><span class="what">Train, with or without a righting force</span><span class="how">AdamW from the written init; the force anchors weights or neuron function to the construction.</span></div>
+  </section>
+
+  <section class="col stack" id="bins">
+    <div class="eyebrow">Step 1 · what the bins know</div>
+    <h2>How much can a bin tell you about the next token?</h2>
+    <p id="bins-text"></p>
+  </section>
+  <figure id="fig-bins">
+    <div class="fig-head"><span class="fig-title">Next-token cross-entropy if you knew the bin</span><span class="legend" id="leg-bins"></span></div>
+    <div class="chart" id="chart-bins"></div>
+    <figcaption id="cap-bins"></figcaption>
+  </figure>
+
+  <section class="col stack" id="construct">
+    <div class="eyebrow">Step 2 · writing the circuit</div>
+    <h2>A working model before the first gradient step</h2>
+    <p id="construct-text"></p>
+  </section>
+  <figure id="fig-step0">
+    <div class="fig-head"><span class="fig-title">Validation loss at step 0, by initialisation</span></div>
+    <div class="chart" id="chart-step0"></div>
+    <figcaption id="cap-step0"></figcaption>
+  </figure>
+
+  <section class="col stack" id="train">
+    <div class="eyebrow">Step 3 · does it skip ahead?</div>
+    <h2>The head start, and how fast it fades</h2>
+    <p id="train-text"></p>
+  </section>
+  <div class="two">
+    <figure>
+      <div class="fig-head"><span class="fig-title">Loss gap to the random-init baseline</span></div>
+      <div class="chart" id="chart-gap"></div>
+      <div class="legend" id="leg-gap"></div>
+      <figcaption id="cap-gap"></figcaption>
+    </figure>
+    <figure>
+      <div class="fig-head"><span class="fig-title">First 2.5M tokens</span></div>
+      <div class="chart" id="chart-early"></div>
+      <div class="legend" id="leg-early"></div>
+      <figcaption id="cap-early"></figcaption>
+    </figure>
+  </div>
+  <figure>
+    <div class="fig-head"><span class="fig-title">Every 50M-token run, against the budget curve</span></div>
+    <div class="tablewrap" id="table-runs"></div>
+    <figcaption id="cap-table"></figcaption>
+  </figure>
+
+  <figure id="fig-seeds">
+    <div class="fig-head"><span class="fig-title">Seed replicates (three inits and data orders each)</span></div>
+    <div class="tablewrap" id="table-seeds"></div>
+    <figcaption id="cap-seeds"></figcaption>
+  </figure>
+
+  <section class="col stack" id="force">
+    <div class="eyebrow">Step 4 · the righting force</div>
+    <h2>Holding the written neurons in place</h2>
+    <p>What does it mean for a written neuron to still <em>be there</em>? Interpretability microscopes describe a neuron by what drives it (its strongest activations, at both poles) and by what it does downstream (its causal role in attribution graphs), not by its raw weights. So each run is scored three ways: are its <strong>weights</strong> near the construction, is it still <strong>selective</strong> for its concept, and is it still <strong>used</strong>, meaning that removing it costs loss. The three can come apart.</p>
+    <p id="force-text"></p>
+  </section>
+  <figure>
+    <div class="fig-head"><span class="fig-title">Final loss vs. how well concept neurons still detect their concept</span></div>
+    <div class="chart" id="chart-force"></div>
+    <figcaption id="cap-force"></figcaption>
+  </figure>
+  <figure>
+    <div class="fig-head"><span class="fig-title">Are the written neurons alive, still selective, and still used?</span></div>
+    <div class="tablewrap" id="table-written"></div>
+    <figcaption>Live: the neuron's ReLU² output is positive on at least one of 4,000 held-out passages. Fidelity: the argmax over the 160 topic (40 format) written neurons' pre-activations matches Jev's label. Ablation: validation-loss increase when the 200 written neurons' outputs are zeroed, against zeroing 200 random other neurons of the same layer (mean of 3 draws).</figcaption>
+  </figure>
+
+  <section class="col stack" id="copy">
+    <div class="eyebrow">Step 5 · a pattern instead of an abstraction</div>
+    <h2>Writing a copy circuit</h2>
+    <p id="copy-text"></p>
+  </section>
+  <figure>
+    <div class="fig-head"><span class="fig-title">Loss gap to the baseline, with and without the hand-built copy circuit</span></div>
+    <div class="chart" id="chart-copy"></div>
+    <div class="legend" id="leg-copy"></div>
+    <figcaption id="cap-copy"></figcaption>
+  </figure>
+
+  <section class="col stack" id="scale">
+    <div class="eyebrow">Scale check</div>
+    <h2>A bigger model, twice the tokens</h2>
+    <p id="scale-text"></p>
+  </section>
+  <figure>
+    <div class="fig-head"><span class="fig-title">6-layer, d=384 model (63M parameters), 100M tokens: loss gap to its own baseline</span></div>
+    <div class="chart" id="chart-scale"></div>
+    <div class="legend" id="leg-scale"></div>
+  </figure>
+
+  <section class="col stack" id="clean">
+    <div class="eyebrow">Test of the premise</div>
+    <h2>Are this model's neurons already clean?</h2>
+    <p id="clean-text"></p>
+  </section>
+  <div class="two">
+    <figure>
+      <div class="fig-head"><span class="fig-title">Purity of top activations, by layer</span></div>
+      <div class="chart" id="chart-layers"></div>
+      <div class="legend" id="leg-layers"></div>
+      <figcaption id="cap-layers"></figcaption>
+    </figure>
+    <figure>
+      <div class="fig-head"><span class="fig-title">The privileged basis appears during training</span></div>
+      <div class="chart" id="chart-growth"></div>
+      <div class="legend" id="leg-growth"></div>
+      <figcaption id="cap-growth"></figcaption>
+    </figure>
+  </div>
+
+  <section class="col stack" id="scope-intro">
+    <div class="eyebrow">Interactive</div>
+    <h2>Microscope</h2>
+    <p>Load a model and run it on any text, live in your browser (WebGPU when available, otherwise CPU). For a written model, each token is tinted by the strongest of its 200 concept neurons; for a trained model, by the strongest neuron in the chosen layer, labelled with its nearest LLM-named abstraction. Select a token to see which neurons fire there and what the model predicts next.</p>
+  </section>
+  <figure class="scope" id="scope">
+    <div class="controls">
+      <label for="m-sel">Model<select id="m-sel"></select></label>
+      <label for="layer" id="layer-wrap">Layer<select id="layer"><option value="0">1</option><option value="1">2</option><option value="2">3</option><option value="3" selected>4</option></select></label>
+      <label for="temp">Temperature <span id="temp-v" class="num">0.8</span><input type="range" id="temp" min="0" max="1.5" step="0.05" value="0.8"></label>
+      <label for="ngen">Tokens to generate <span id="ngen-v" class="num">40</span><input type="range" id="ngen" min="0" max="120" step="10" value="40"></label>
+      <button id="run">Load and run</button>
+    </div>
+    <label for="text" class="eyebrow">Text</label>
+    <textarea id="text">Preheat the oven to 350 degrees. In a large bowl, whisk together the flour, baking soda and salt, then fold in the melted butter and brown sugar until the dough comes together.</textarea>
+    <div class="status" id="status">Models are fetched only when you press Load and run (about 30 MB each).</div>
+    <div class="tokens" id="tokens" aria-live="polite"></div>
+    <div class="inspect">
+      <div><div class="eyebrow" id="ins-title">Concept neurons at the selected token</div><div class="bars" id="ins-neurons"></div></div>
+      <div><div class="eyebrow">Next-token prediction</div><div class="bars he" id="ins-pred"></div></div>
+    </div>
+  </figure>
+
+  <section class="col stack" id="learned">
+    <div class="eyebrow">What we learned</div>
+    <h2>Findings</h2>
+    <div class="stack" id="findings"></div>
+  </section>
+
+  <section class="col stack" id="methods">
+    <div class="eyebrow">Methods</div>
+    <h2>Setup</h2>
+    <div class="stack" id="methods-text"></div>
+  </section>
+
+  <footer class="col" id="foot"></footer>
+</main>
+
+<script type="module" src="js/app.js"></script>

@@ -1,0 +1,4 @@
+early_base d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 stop_step=150
+early_uni d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 stop_step=150 init_from=runs/init_s/uni.bin
+early_stat d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 stop_step=150 init_from=runs/init_s/stat.bin
+early_stat_llm d=256 L=4 B=64 lr=4e-3 lr_emb_mult=30 lr_head_mult=3 eval_every=250 probe=labels/probe.bin tokens=50000000 stop_step=150 init_from=runs/init_s/stat_llm.bin

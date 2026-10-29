@@ -1,0 +1,5 @@
+lr_s_4e-3_emb100 d=256 L=4 B=64 tokens=25000000 eval_every=250 probe=labels/probe.bin lr=4e-3 lr_emb_mult=100
+lr_s_4e-3_emb30_head3 d=256 L=4 B=64 tokens=25000000 eval_every=250 probe=labels/probe.bin lr=4e-3 lr_emb_mult=30 lr_head_mult=3
+lr_s_4e-3_emb30_head03 d=256 L=4 B=64 tokens=25000000 eval_every=250 probe=labels/probe.bin lr=4e-3 lr_emb_mult=30 lr_head_mult=0.3
+lr_s_3e-3_emb30 d=256 L=4 B=64 tokens=25000000 eval_every=250 probe=labels/probe.bin lr=3e-3 lr_emb_mult=30
+lr_s_6e-3_emb30 d=256 L=4 B=64 tokens=25000000 eval_every=250 probe=labels/probe.bin lr=6e-3 lr_emb_mult=30
