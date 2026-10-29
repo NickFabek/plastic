@@ -3,14 +3,14 @@
 .env.*
 
 # data and everything derived from it (regenerate with tools/prep_climbmix.py, tools/stats.py)
-data/
-data_bin/
-stats/
+/data/
+/data_bin/
+/stats/
 
 # training outputs, checkpoints, API response cache
-runs/
-cache/
-build/
+/runs/
+/cache/
+/build/
 
 # large / regenerable label artifacts (keep the paid-for Jev + gpt-6-luna outputs)
 labels/*prop.npz
