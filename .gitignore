@@ -16,6 +16,10 @@ build/
 labels/*prop.npz
 labels/kmeans.npz
 labels/*.bin
+# raw scraped web text sampled from the dataset (regenerate with tools/sample_passages.py, seeds 42/43/7)
+labels/passages.json
+labels/probe_passages.json
+labels/taxonomy_sample.json
 
 # exported browser weights (~110 MB; regenerate with tools/export_web.py)
 web/models/
